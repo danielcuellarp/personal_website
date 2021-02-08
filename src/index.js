@@ -4,7 +4,7 @@ const path = require('path')
 const app = express()
 
 // Configuracion
-app.set('port', 4000) 
+app.set('port', process.env.PORT || 4000) 
 app.set('views', path.join(__dirname, 'views')) // ubicacion de las vistas
 app.set('view engine', 'ejs') // motor de plantillas
 app.use(morgan('dev')) // logger de morgan
