@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const bcyrpt = require('bcrypt-nodejs');
+const bcyrpt = require('bcrypt-nodejs')
 const { Schema } = mongoose
 
 const userSchema = new Schema({
@@ -13,7 +13,8 @@ userSchema.methods.encryptPassword = (password) => {
 }
 
 // Compara si la contraseña es correcta (compara el dato cifrado, no se necesita descifrar)
-userSchema.methods.comparePassword = (password) => {
+// se declara como function normal, si se usa => da error de UnhandledPromiseRejectionWarning
+userSchema.methods.comparePassword = function (password) {
   return bcyrpt.compareSync(password, this.password);
 }
 

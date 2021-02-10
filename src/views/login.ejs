@@ -1,11 +1,11 @@
 <%- layout('layouts/main.ejs') %>
 
-<% if (signupMessage) { %>
-  <div><%= signupMessage %></div>
+<% if (loginMessage) { %>
+  <div><%= loginMessage %></div>
 <% } %>
 
-<form action="/signup" method="POST">
+<form action="/login" method="POST">
   <input type="email" name="email" placeholder="Email">
   <input type="password" name="password" placeholder="Password">
-  <button type="submit">Registrarse</button>
+  <button type="submit">Iniciar Sesion</button>
 </form>
