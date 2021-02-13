@@ -31,8 +31,9 @@ app.use(passport.session())
 app.use((req, res, next) => {
   app.locals.signupMessage = req.flash('signupMessage')
   app.locals.loginMessage = req.flash('loginMessage')
+  app.locals.user = req.user
   next()
-}) // middleware creado para reutilizar los mensajes, los expone como variables globales en el servidor
+}) // middleware para setear variables globales en el servidor (mensaje, usuario)
 //app.use(require('./messages'))
 
 app.use(require('./routes')) // ubicacion de las rutas

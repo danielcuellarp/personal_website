@@ -44,6 +44,7 @@ passport.use('local-login', new LocalStrategy({
   } else if(!user.comparePassword(password)) {
     done(null, false, req.flash('loginMessage', 'Contraseña incorrecta'))
   } else {
+    //console.log(user)
     done(null, user)
   }
 }));

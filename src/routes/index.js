@@ -19,7 +19,7 @@ router.get('/contact', (req, res) => {
 })
 
 // Pagina de la app (donde estaran las funcionalidades que se iran creando)
-router.get('/app', (req, res, next) => {
+router.get('/app', isAuthenticated, (req, res, next) => {
   res.render('indexApp',datos);
 })
 
@@ -45,4 +45,22 @@ router.post('/login', passport.authenticate('local-login', {
   passReqToCallback: true
 }))
 
+// Cerrar sesion
+router.get('/logout', (req, res, next) => {
+  req.logout()
+  res.redirect('/')
+})
+
+// Validacion si el usuario esta logueado
+function isAuthenticated(req, res, next){
+  console.log("1")
+  if(req.isAuthenticated()){
+    console.log("2")
+    return next()
+  } else {
+    console.log("3")
+    res.redirect('/login')
+  }
+  console.log("4")
+}
 module.exports = router;

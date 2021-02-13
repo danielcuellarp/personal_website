@@ -1,11 +1,22 @@
 <%- layout('layouts/main.ejs') %>
 
+<!-- validar lo de .length > 0 -->
 <% if (loginMessage) { %>
   <div><%= loginMessage %></div>
 <% } %>
 
-<form action="/login" method="POST">
-  <input type="email" name="email" placeholder="Email">
-  <input type="password" name="password" placeholder="Password">
-  <button type="submit">Iniciar Sesion</button>
-</form>
+<div class="container">
+  <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+    <form action="/login" method="POST">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" aria-describedby="emailHelp">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Contraseña</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Contraseña">
+      </div>
+      <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+    </form>
+</div>
+</div>
