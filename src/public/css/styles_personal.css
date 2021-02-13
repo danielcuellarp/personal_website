@@ -1,0 +1,28 @@
+body{
+  background-color: black;
+}
+
+#footer {
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:30px;
+  width:100%;
+  color:#6c757d;
+  text-align: center;
+}
+
+/* .paddingPersonal{
+  padding-top : 150px;
+} */
+
+ @media (min-width: 992px) {
+  .paddingPersonal{
+    padding-top : 150px;
+  }
+} 
+
+#form {
+  background-color:rgb(255, 255, 255, 0.2);
+  padding: 10px;
+}

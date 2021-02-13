@@ -3,3 +3,5 @@ node_modules/
 
 # archivos
 *.log
+.datos
+/src/keys.js
