@@ -1,0 +1,13 @@
+ylxuffgttmchjmjxny@twzhhq.online
+halaM...
+
+usuario bd:
+dbUser, halaM...
+
+Motor de plantillas:
+ejs y ejs-mate
+ejs es el modulo original, ejs-mate tiene mas funcionalidades
+actualmente se esta usando ejs-mate porque tiene lo de Layout que permite crear solamente un archivo base (layouts)
+e invocarlo en donde se necesite y asi solo cambiar lo que es el body del html
+con ejs tocaba en la pagina destino llamar a esos archivos partials y se iba construyendo por partes
+es decir, es mas breve con ejs-mate
