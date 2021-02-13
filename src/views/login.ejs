@@ -1,12 +1,15 @@
 <%- layout('layouts/main.ejs') %>
 
-<!-- validar lo de .length > 0 -->
-<% if (loginMessage) { %>
-  <div><%= loginMessage %></div>
+<% if (loginMessage.length > 0) { %>
+  <div class="container">
+    <div id="alertMessage" class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4" >
+      <div class="alert alert-warning" role="alert"><%= loginMessage %></div>
+    </div>
+  </div>
 <% } %>
 
 <div class="container">
-  <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+  <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4" id="form">
     <form action="/login" method="POST">
       <div class="form-group">
         <label for="exampleInputEmail1">Email</label>
@@ -16,7 +19,7 @@
         <label for="exampleInputPassword1">Contraseña</label>
         <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Contraseña">
       </div>
-      <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+      <button type="submit" class="btn btn-primary btn-block">Iniciar Sesion</button>
     </form>
 </div>
 </div>

@@ -12,12 +12,17 @@ body{
   text-align: center;
 }
 
-.paddingPersonal{
+/* .paddingPersonal{
   padding-top : 150px;
-}
+} */
 
-@media (max-width: 768px) {
+ @media (min-width: 992px) {
   .paddingPersonal{
-    padding-top : 0px;
+    padding-top : 150px;
   }
+} 
+
+#form {
+  background-color:rgb(255, 255, 255, 0.2);
+  padding: 10px;
 }

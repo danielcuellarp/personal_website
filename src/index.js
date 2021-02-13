@@ -18,7 +18,7 @@ app.set('view engine', 'ejs') // motor de plantillas
 // Middlewares
 // recordar que el orden importa, la siguiente linea utiliza la anterior en algunos casos
 app.use(morgan('dev')) // logger de morgan
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({extended: false})) // para interpretar lo que llega como json (de formularios)
 app.use(session({
   secret: 'ClaveSecreta',
   resave: false,
@@ -38,6 +38,8 @@ app.use((req, res, next) => {
 
 app.use(require('./routes')) // ubicacion de las rutas
 app.use(express.static(path.join(__dirname, 'public'))) // set carpeta publica
+
+app.disable('x-powered-by');
 
 // Servidor
 app.listen(app.get('port'), () => {

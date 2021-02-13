@@ -19,20 +19,21 @@ passport.use('local-signup', new LocalStrategy({
   passwordField: 'password',
   passReqToCallback: true
 }, async (req, email, password, done) => {
+  let { name } = req.body
   const existsUser = await User.findOne({email: email})
   if (existsUser){
-    console.log(existsUser.email)
     return done(null, false, req.flash('signupMessage', 'El email ya esta registrado')) 
   } else {
     const newUser = new User()
     newUser.email = email
     newUser.password = newUser.encryptPassword(password)
+    newUser.name = name.toUpperCase()
     await newUser.save()
     done(null, newUser)
   }
 }))
 
-// Validar Usuario
+// Loguear Usuario
 passport.use('local-login', new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
@@ -44,7 +45,6 @@ passport.use('local-login', new LocalStrategy({
   } else if(!user.comparePassword(password)) {
     done(null, false, req.flash('loginMessage', 'Contraseña incorrecta'))
   } else {
-    //console.log(user)
     done(null, user)
   }
 }));

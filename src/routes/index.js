@@ -53,14 +53,11 @@ router.get('/logout', (req, res, next) => {
 
 // Validacion si el usuario esta logueado
 function isAuthenticated(req, res, next){
-  console.log("1")
   if(req.isAuthenticated()){
-    console.log("2")
     return next()
   } else {
-    console.log("3")
+    req.flash('loginMessage', 'Debes iniciar sesion primero')
     res.redirect('/login')
   }
-  console.log("4")
 }
 module.exports = router;
