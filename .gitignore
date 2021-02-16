@@ -5,3 +5,4 @@ node_modules/
 *.log
 .datos
 /src/keys.js
+.env

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-const { mongodb } = require('./keys')
+//const { mongodb } = require('./keys')
 
-mongoose.connect(mongodb.uri,{
+mongoose.connect(process.env.MONGODB_URI,{
   useUnifiedTopology: true, // porque esta Deprecated
   useNewUrlParser: true // porque esta Deprecated
 })
